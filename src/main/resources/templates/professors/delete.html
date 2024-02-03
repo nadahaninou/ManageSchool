@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un Professeur</title>
+    <!-- Intégration de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Supprimer un Professeur</h2>
+
+    <p>Êtes-vous sûr de vouloir supprimer ce professeur ?</p>
+
+    <form th:action="@{/professors/delete}" method="post" th:object="${professor}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+        <a th:href="@{/professors/list}" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+
+
+
+</body>
+</html>
